@@ -7,10 +7,9 @@ import {
 } from '@remix-run/react'
 import type { LinksFunction } from '@remix-run/node'
 
-// My imports
-import { KomaRecord, KomaInfo } from '~/data/komaInfo'
-
 import './tailwind.css'
+import WindowTabs from './components/windowTabs'
+import ModalCard from './components/modalCard'
 
 export const links: LinksFunction = () => [
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -46,12 +45,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
     )
 }
 
-export const loader = async (komas: KomaRecord[], komaData: KomaRecord) => {
-    const koma = new KomaInfo(komas, komaData)
-    const k = await koma.getKomas()
-    return { k }
-}
-
 export default function App() {
-    return <Outlet />
+    return (
+        <>
+            <WindowTabs />
+            <ModalCard />
+            <Outlet />
+        </>
+    )
 }
