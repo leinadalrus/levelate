@@ -1,34 +1,16 @@
-import { LoaderFunctionArgs } from '@remix-run/node'
-import { Form, useLoaderData, useSubmit } from '@remix-run/react'
-import { useEffect } from 'react'
-import { KomaInfo } from '~/models/koma'
-
-export const loader = async ({ request }: LoaderFunctionArgs) => {
-    const tag = document.getElementById('search-field') as HTMLInputElement
-    const formatted = tag?.value.toString()
-
-    const search = new URL(request.url)
-    const query = search.searchParams.get(formatted)
-
-    const k = new KomaInfo([], {
-        id: '',
-        name: '',
-        nickname: '',
-        image: '',
-        description: '',
-        publishedOn: '',
-        favourite: false
-    })
-
-    const komas = await k.getKomas()
-    if (!komas) throw new Response('Not Found', { status: 404 })
-
-    return { komas, query }
-}
+import { Form, useNavigate, useSubmit } from '@remix-run/react'
+import { useEffect, useState } from 'react'
 
 const SearchField = () => {
-    const { query } = useLoaderData<typeof loader>()
+    const [query, setInputs] = useState('')
+    const navigate = useNavigate()
     const submission = useSubmit()
+
+    const handleSearch = () => {
+        if (query.trim()) navigate(`/:?/${query}`)
+
+        navigate('/:?')
+    }
 
     useEffect(() => {
         const searchField = document.getElementById('search-field')
@@ -37,16 +19,22 @@ const SearchField = () => {
     }, [query])
 
     return (
-        <Form id="search-form">
+        <Form id="search-form" onSubmit={handleSearch}>
             <input
                 id="search-field"
                 type="search"
                 name="query"
                 placeholder="Search"
-                defaultValue={query || ''}
                 aria-label="Search"
-                onChange={(event) => submission(event.currentTarget)}
+                defaultValue={query || ''}
+                onChange={(event) => setInputs(event.target.value)}
             />
+            <button
+                type="submit"
+                onChange={(event) => submission(event.currentTarget)}
+            >
+                Search
+            </button>
         </Form>
     )
 }

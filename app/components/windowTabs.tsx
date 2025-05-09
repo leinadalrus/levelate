@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const WindowTabs = () => {
+const WindowTabs = () => {
     const [activeTab, setActiveTab] = useState('Garage')
 
     const renderContent = () => {
