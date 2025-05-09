@@ -3,7 +3,7 @@ import type { LoaderFunctionArgs } from '@remix-run/node'
 import type { FunctionComponent } from 'react'
 
 import invariant from 'tiny-invariant'
-import { KomaInfo, type KomaRecord } from '~/data/komaInfo'
+import { KomaInfo, type KomaRecord } from '~/models/koma'
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
     invariant(params.komaId, 'Missing Koma(...?)')

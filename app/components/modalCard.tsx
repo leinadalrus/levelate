@@ -1,14 +1,6 @@
+import { Card } from './card'
 import { useState } from 'react'
 import ReactDOM from 'react-dom'
-
-interface Card {
-    title?: string
-    content?: string
-    description?: string
-    synopsis?: string
-    flavour?: string
-    image?: string
-}
 
 const ModalCard = () => {
     const [isModalActive, setModalAsActive] = useState(false)

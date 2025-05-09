@@ -10,6 +10,7 @@ import type { LinksFunction } from '@remix-run/node'
 import './tailwind.css'
 import WindowTabs from './components/windowTabs'
 import ModalCard from './components/modalCard'
+import SearchField from './components/searchField'
 
 export const links: LinksFunction = () => [
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -49,6 +50,7 @@ export default function App() {
     return (
         <>
             <WindowTabs />
+            <SearchField />
             <ModalCard />
             <Outlet />
         </>
