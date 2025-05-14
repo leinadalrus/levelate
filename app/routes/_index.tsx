@@ -1,7 +1,7 @@
 import type { MetaFunction } from '@remix-run/node'
-import WindowTabs from '~/components/windowTabs'
-import ModalCard from '~/components/modalCard'
-import SearchField from '~/components/searchField'
+import WindowTabs from '~/routes/app_.components/windowTabs'
+import ModalCard from '~/routes/app_.components/modalCard'
+import Asidebar from './app_.components/asidebar'
 
 export const meta: MetaFunction = () => {
     return [
@@ -13,10 +13,11 @@ export const meta: MetaFunction = () => {
 export default function Index() {
     return (
         <div className="flex h-screen items-center justify-center">
+            <Asidebar />
+
             <div className="flex flex-col items-center gap-16">
                 <WindowTabs />
                 <ModalCard />
-                <SearchField />
             </div>
         </div>
     )

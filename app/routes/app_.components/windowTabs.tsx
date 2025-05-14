@@ -81,22 +81,22 @@ const styles = {
         padding: '1rem'
     },
     tab: {
-        padding: '1rem 2rem',
+        padding: '0.5rem 0.8rem',
         border: 'none',
         backgroundColor: '#ddd',
         cursor: 'pointer'
     },
     activeTab: {
-        padding: '1rem 2rem',
+        padding: '0.5rem 0.8rem',
         border: 'none',
         backgroundColor: '#007bff',
         color: '#fff',
         cursor: 'pointer'
     },
     content: {
-        marginTop: '2rem',
-        padding: '2rem',
-        border: '1rem solid #ddd'
+        marginTop: '1.2rem',
+        padding: '0.5rem 0.8rem',
+        border: '0.8rem solid #ddd'
     }
 }
 

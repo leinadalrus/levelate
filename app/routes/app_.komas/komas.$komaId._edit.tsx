@@ -2,7 +2,7 @@ import type { LoaderFunctionArgs } from '@remix-run/node'
 import { Form, redirect, useLoaderData, useNavigate } from '@remix-run/react'
 import invariant from 'tiny-invariant'
 
-import { KomaInfo } from '~/models/koma'
+import { KomaInfo } from '~/routes/app_.komas/koma'
 
 export const action = async () => {
     const k = new KomaInfo([], {
@@ -54,22 +54,22 @@ export default function EditKoma() {
                 <input
                     aria-label="Name"
                     name="name"
-                    placeholder="First"
+                    placeholder="Name"
                     type="text"
                 />
                 <input
                     aria-label="Nickname"
                     name="nickname"
-                    placeholder="Last"
+                    placeholder="Nickname"
                     type="text"
                 />
             </p>
             <label>
-                <span>Hero Image URL</span>
+                <span>Image</span>
                 <input
-                    aria-label="Hero Image URL"
+                    aria-label="Product [Item] (Hero) Image URL"
                     name="image"
-                    placeholder=""
+                    placeholder="Image"
                     type="text"
                 />
             </label>
