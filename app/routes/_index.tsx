@@ -12,8 +12,6 @@ export const meta: MetaFunction = () => {
 export default function Index() {
     return (
         <div className="flex h-screen items-center justify-center text-[#f1eae4] bg-[#130b06]">
-            <Asidebar />
-
             <main className="flex flex-col items-center">
                 <article className="content">
                     <section className="container-fluid">
@@ -21,6 +19,8 @@ export default function Index() {
                     </section>
                 </article>
             </main>
+
+            <Asidebar />
         </div>
     )
 }
