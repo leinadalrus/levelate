@@ -28,10 +28,12 @@ const SearchField = () => {
                 aria-label="Search"
                 defaultValue={query || ''}
                 onChange={(event) => setInputs(event.target.value)}
+                className="max-w-sm rounded-xl form-control form-control-sidebar"
             />
             <button
                 type="submit"
                 onChange={(event) => submission(event.currentTarget)}
+                className="p-1 mx-1 btn btn-sidebar"
             >
                 Search
             </button>

@@ -2,7 +2,7 @@ import type { LoaderFunctionArgs } from '@remix-run/node'
 import { Form, redirect, useLoaderData, useNavigate } from '@remix-run/react'
 import invariant from 'tiny-invariant'
 
-import { KomaInfo } from '~/routes/app_.komas/koma'
+import { KomaInfo } from '~/routes/komas/koma'
 
 export const action = async () => {
     const k = new KomaInfo([], {

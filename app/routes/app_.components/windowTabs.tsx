@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import TradingCard from './tradingCard'
 
 const WindowTabs = () => {
     const [activeTab, setActiveTab] = useState('Garage')
@@ -6,15 +7,35 @@ const WindowTabs = () => {
     const renderContent = () => {
         switch (activeTab) {
             case 'Garage':
-                return <></>
+                return (
+                    <>
+                        <TradingCard />
+                    </>
+                )
             case 'Builds':
-                return <></>
+                return (
+                    <>
+                        <TradingCard />
+                    </>
+                )
             case 'Inventory':
-                return <></>
+                return (
+                    <>
+                        <TradingCard />
+                    </>
+                )
             case 'Community':
-                return <></>
+                return (
+                    <>
+                        <TradingCard />
+                    </>
+                )
             case 'Support':
-                return <></>
+                return (
+                    <>
+                        <TradingCard />
+                    </>
+                )
             default:
                 return <></>
         }
@@ -22,7 +43,10 @@ const WindowTabs = () => {
 
     return (
         <>
-            <nav style={styles.nav}>
+            <nav
+                className="flex w-full items-center justify-between rounded rounded-sm"
+                style={styles.nav}
+            >
                 <button
                     style={
                         activeTab == 'Garage' ? styles.activeTab : styles.tab
@@ -77,26 +101,27 @@ const styles = {
     nav: {
         display: 'flex',
         justifyContent: 'space-around',
-        backgroundColor: '#f0f0f0',
-        padding: '1rem'
+        backgroundColor: '#130b06',
+        padding: '0.1rem'
     },
     tab: {
         padding: '0.5rem 0.8rem',
         border: 'none',
-        backgroundColor: '#ddd',
+        backgroundColor: '#ebb583',
+        color: '1eab8d',
         cursor: 'pointer'
     },
     activeTab: {
         padding: '0.5rem 0.8rem',
         border: 'none',
-        backgroundColor: '#007bff',
-        color: '#fff',
+        backgroundColor: '#446a4b',
+        color: '#f1eae4',
         cursor: 'pointer'
     },
     content: {
         marginTop: '1.2rem',
         padding: '0.5rem 0.8rem',
-        border: '0.8rem solid #ddd'
+        border: '0.8rem solid #f1eae4'
     }
 }
 
