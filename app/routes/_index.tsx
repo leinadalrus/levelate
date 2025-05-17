@@ -14,14 +14,12 @@ export default function Index() {
         <div className="flex h-screen items-center justify-center text-[#f1eae4] bg-[#130b06]">
             <Asidebar />
 
-            <main className="content-wrapper">
-                <div className="flex flex-col items-center gap-16">
-                    <WindowTabs />
-
-                    <article className="content">
-                        <section className="container-fluid"></section>
-                    </article>
-                </div>
+            <main className="flex flex-col items-center">
+                <article className="content">
+                    <section className="container-fluid">
+                        <WindowTabs />
+                    </section>
+                </article>
             </main>
         </div>
     )
