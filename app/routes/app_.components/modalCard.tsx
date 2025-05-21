@@ -1,17 +1,9 @@
-import { ICard } from './tradingCard'
+import TradingCard, { CardProps } from './tradingCard'
 import { useState } from 'react'
 import ReactDOM from 'react-dom'
 
-const ModalCard = () => {
+const ModalCard = ({ title, content, flavour, image }: CardProps) => {
     const [isModalActive, setModalAsActive] = useState(false)
-    const card: ICard = {
-        title: '',
-        content: '',
-        description: '',
-        synopsis: '',
-        flavour: '',
-        image: ''
-    }
 
     const handleMouseOver = () => {
         setModalAsActive(true)
@@ -33,17 +25,19 @@ const ModalCard = () => {
         <>
             {isModalActive &&
                 ReactDOM.createPortal(
-                    <article
+                    <div
                         onFocus={handleFocus}
                         onBlur={handleFocusLoss}
                         onMouseOver={handleMouseOver}
                         onMouseOut={handleMouseOut}
                     >
-                        <h1>{card.title}</h1>
-                        <img src={card.image} alt="" />
-                        <p>{card.content || card.description}</p>
-                        <i>{card.flavour || card.synopsis}</i>
-                    </article>,
+                        <TradingCard
+                            title={title}
+                            content={content}
+                            flavour={flavour}
+                            image={image}
+                        />
+                    </div>,
                     document.body
                 )}
         </>
