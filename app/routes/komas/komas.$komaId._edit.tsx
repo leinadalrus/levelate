@@ -48,46 +48,69 @@ export default function EditKoma() {
     const navigate = useNavigate()
 
     return (
-        <Form key={id} id="koma-form" method="post">
-            <p>
-                <span>Name</span>
-                <input
-                    aria-label="Name"
-                    name="name"
-                    placeholder="Name"
-                    type="text"
-                />
-                <input
-                    aria-label="Nickname"
-                    name="nickname"
-                    placeholder="Nickname"
-                    type="text"
-                />
-            </p>
-            <label>
-                <span>Image</span>
-                <input
-                    aria-label="Product [Item] (Hero) Image URL"
-                    name="image"
-                    placeholder="Image"
-                    type="text"
-                />
+        <Form key={id} id="koma-form" method="post" className="w-full max-w-xs">
+            <label
+                htmlFor="title"
+                className="block text-[#010401] text-sm mb-2"
+            >
+                Title
             </label>
-            <label>
-                <span>description</span>
-                <textarea name="description" rows={6} />
+            <input
+                aria-label="Title"
+                name="name"
+                placeholder="Title"
+                type="text"
+            />
+
+            <label
+                htmlFor="flavour"
+                className="block text-[#010401] text-sm mb-2"
+            >
+                Flavour
             </label>
-            <p>
-                <button type="submit">Update</button>
-                <button
+            <input
+                aria-label="Flavour"
+                name="Flavour"
+                placeholder="Flavour"
+                type="text"
+            />
+            <label
+                htmlFor="image"
+                className="block text-[#010401] text-sm mb-2"
+            >
+                Image
+            </label>
+            <input
+                aria-label="Product [Hero] [Item] Image Uploaded File"
+                name="image"
+                placeholder="Image"
+                type="text"
+            />
+
+            <label
+                htmlFor="content"
+                className="block text-[#010401] text-sm mb-2"
+            >
+                Content
+            </label>
+            <textarea name="content" rows={6} />
+
+            <button
+                type="submit"
+                className="g-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+                Apply
+            </button>
+            <i>
+                <input
                     type="button"
+                    name="discard"
+                    value={'Discard'}
                     onClick={() => {
                         navigate(-1)
                     }}
-                >
-                    Discard
-                </button>
-            </p>
+                />
+            </i>
         </Form>
     )
 }
