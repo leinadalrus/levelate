@@ -36,6 +36,9 @@ const ModalCard = ({ title, content, flavour, image }: CardProps) => {
                             content={content}
                             flavour={flavour}
                             image={image}
+                            author={''}
+                            group={''}
+                            tags={[]}
                         />
                     </div>,
                     document.body

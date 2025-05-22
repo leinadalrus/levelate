@@ -1,13 +1,13 @@
 import { ViewStyleProps } from '../app_.native/viewStyleProps'
 
 export type CardProps = ViewStyleProps & {
-    title?: string
-    author?: string
-    group?: string
-    content?: string
-    flavour?: string
-    image?: string
-    tags?: string[]
+    title: string
+    author: string
+    group: string
+    content: string
+    flavour: string
+    image: string
+    tags: string[]
 }
 
 const TradingCard = ({ title, content, flavour, image, tags }: CardProps) => {
@@ -25,7 +25,13 @@ const TradingCard = ({ title, content, flavour, image, tags }: CardProps) => {
 
             <div className="px-6 pt-4 pb-2">
                 <span className="inline-block bg-[#446a4b] rounded-full px-2 py-1 text-sm text-[#f1eae4] mr-2 mb-2">
-                    {tags}
+                    {tags.map((tag, id) => {
+                        return (
+                            <div key={id}>
+                                <i>{tag}</i>
+                            </div>
+                        )
+                    })}
                 </span>
             </div>
             <section className="px-6 py-4">

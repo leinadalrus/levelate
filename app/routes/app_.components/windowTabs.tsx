@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import TradingCard from './tradingCard'
-import Tabletop from './tabletop'
+import TableView from '../app_.widgets/tableView'
 
 const WindowTabs = () => {
     const [activeTab, setActiveTab] = useState('Garage')
@@ -10,39 +9,35 @@ const WindowTabs = () => {
             case 'Garage':
                 return (
                     <>
-                        <Tabletop />
+                        <TableView />
                     </>
                 )
             case 'Builds':
                 return (
                     <>
-                        <Tabletop />
+                        <TableView />
                     </>
                 )
             case 'Inventory':
                 return (
                     <>
-                        <Tabletop />
+                        <TableView />
                     </>
                 )
             case 'Community':
                 return (
                     <>
-                        <Tabletop />
+                        <TableView />
                     </>
                 )
             case 'Support':
                 return (
                     <>
-                        <Tabletop />
+                        <TableView />
                     </>
                 )
             default:
-                return (
-                    <>
-                        <TradingCard />
-                    </>
-                )
+                return <></>
         }
     }
 
