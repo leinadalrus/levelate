@@ -8,7 +8,7 @@ import {
 } from '@remix-run/react'
 import invariant from 'tiny-invariant'
 
-import { KomaProps } from '~/routes/komas/komas.$komaProps'
+import { KomaProps } from '~/routes/komas/komas.komaProps'
 
 export const action = async ({ id }: KomaProps) => {
     return redirect(`/komas/${id}/edit`)

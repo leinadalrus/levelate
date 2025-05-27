@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import TradingCard from './tradingCard'
-import AlbumArt from './albumArt'
-import ModalCard from './modalCard'
+import GridView from '../app_.views/gridView'
+import CardView from '../app_.views/cardView'
 
 const WindowTabs = () => {
     const [activeTab, setActiveTab] = useState('yours')
@@ -9,45 +8,11 @@ const WindowTabs = () => {
     const renderContent = () => {
         switch (activeTab) {
             case 'yours':
-                return (
-                    <TradingCard
-                        title={'Hello world'}
-                        author={'Chicken'}
-                        group={'Chickens'}
-                        content={
-                            'Lorem ipsum dolor sit amet, \
-                            consectetur adipiscing elit, \
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-                        }
-                        flavour={
-                            'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-                        }
-                        image={''}
-                        tags={['rpg']}
-                    />
-                )
+                return <CardView />
             case 'elses':
-                return (
-                    <AlbumArt title={'Hello world'} image={''} tags={['rpg']} />
-                )
+                return <GridView />
             case 'miscs':
-                return (
-                    <ModalCard
-                        title={'Hello world'}
-                        author={'Chicken'}
-                        group={'Chickens'}
-                        content={
-                            'Lorem ipsum dolor sit amet, \
-                            consectetur adipiscing elit, \
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-                        }
-                        flavour={
-                            'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-                        }
-                        image={''}
-                        tags={['rpg']}
-                    />
-                )
+                return <></>
             default:
                 return <></>
         }

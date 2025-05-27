@@ -11,14 +11,14 @@ export type CardProps = {
 const TradingCard = ({ title, content, flavour, image, tags }: CardProps) => {
     return (
         <article className="max-w-sm max-h-md rounded-b rounded-md shadow-lg text-[#0e020c] bg-[#f1eae4]">
-            <section className="px-4 py-2">
-                <h1>{title}</h1>
+            <section className="px-2 py-1">
+                <h1 className="text-lg text-justify text-start font-light font-stretch-ultra-expanded italic">{title}</h1>
             </section>
 
             <img
                 src={image}
                 alt="Card focus-hero portrait"
-                className="w-12 rounded rounded-sm"
+                className="max-w-full ma-h-xs px-1 rounded rounded-sm"
             />
 
             <div className="px-6 pt-4 pb-2">

@@ -2,7 +2,7 @@ import { Form } from '@remix-run/react'
 import type { LoaderFunctionArgs } from '@remix-run/node'
 
 import invariant from 'tiny-invariant'
-import { FavouritesProp, KomaMutation } from './komas.$komaProps'
+import { FavouritesProp, KomaMutation } from './komas.komaProps'
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
     invariant(params.komaId, 'Missing Koma(...?)')

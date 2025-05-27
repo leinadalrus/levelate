@@ -1,7 +1,6 @@
 import { Form } from '@remix-run/react'
-import { ViewStyleProps } from '../app_.native/viewStyleProps'
 
-type LoginProps = ViewStyleProps & {
+type LoginProps = {
     id: number
     email: string
     username: string
