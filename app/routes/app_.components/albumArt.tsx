@@ -1,9 +1,7 @@
-import { ViewStyleProps } from '../app_.native/viewStyleProps'
-
-export type AlbumProps = ViewStyleProps & {
-    title?: string
-    image?: string
-    tags?: string[]
+export type AlbumProps = {
+    title: string
+    image: string
+    tags: string[]
 }
 
 const AlbumArt = ({ title, image, tags }: AlbumProps) => {

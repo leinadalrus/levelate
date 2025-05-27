@@ -1,6 +1,4 @@
-import { ViewStyleProps } from '../app_.native/viewStyleProps'
-
-export type CardProps = ViewStyleProps & {
+export type CardProps = {
     title: string
     author: string
     group: string

@@ -2,8 +2,11 @@ import SearchField from './searchField'
 
 const Asidebar = () => {
     return (
-        <div className="p-4 mx-1">
-            <aside className="flex flex-col h-screen items-center justify-center gap-6">
+        <div
+            className="fixed top-0 right-0 z-40 w-64 h-screen \
+        transition-transform -translate-x-full sm:-translate-x-sm xs:-translate-x-xs p-4 mx-1"
+        >
+            <aside className="flex flex-col items-center justify-center gap-6">
                 <img className="img-circle elevation-2" src="" alt="" />
 
                 <h1>Find Original Creations</h1>
