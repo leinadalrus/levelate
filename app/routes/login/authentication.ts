@@ -1,10 +1,7 @@
-import dotenv from 'dotenv'
 import jwt from 'jsonwebtoken'
 
-dotenv.config()
-
 export function regenerateAccessToken(username: string): string {
-    return jwt.sign(username, `${process.env['SECRET_KEY']}`, {
+    return jwt.sign(username, process.env['SECRET_KEY'], {
         expiresIn: '3000s'
     })
 }
@@ -22,7 +19,7 @@ export function validateAccessToken(
     response: Response
 ): number {
     const header = request.headers.get('authorization')
-    const token = header && header.split(' ')[1]
+    const token = header && header.split(/^([\s])$/)[1]
 
     if (token == null) return response.status
 

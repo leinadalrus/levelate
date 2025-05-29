@@ -1,6 +1,14 @@
-import mongoose from 'mongoose'
+import { model, Model, Schema } from 'mongoose'
 
-const UserSchema = new mongoose.Schema(
+interface ILoginUser {
+    username: string
+    email: string
+    password: string
+}
+
+type MemberType = Model<ILoginUser>
+
+const MemberSchema = new Schema<ILoginUser, MemberType>(
     {
         username: {
             type: String,
@@ -27,4 +35,4 @@ const UserSchema = new mongoose.Schema(
     { collection: 'users' }
 )
 
-export const User = mongoose.model('user', UserSchema)
+export const Member = model('user', MemberSchema)

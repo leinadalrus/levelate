@@ -3,7 +3,6 @@ import { Form } from '@remix-run/react'
 type LoginProps = {
     id: number
     email: string
-    username: string
     password: string
     webtoken: string
 }
